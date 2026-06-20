@@ -1,0 +1,22 @@
+.genres {
+  background: #0f0f0f;
+  padding: 12px;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.genres h2 {
+  margin-top: 0;
+  font-size: 1rem;
+  color: #ff4c4c;
+}
+
+.genres button {
+  display: inline-block;
+  margin: 6px 6px 0 0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  background: #222;
+  color: #ddd;
+}

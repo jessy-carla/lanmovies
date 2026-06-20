@@ -1,0 +1,20 @@
+.hero {
+  position: relative;
+  padding: 40px 20px;
+  background: linear-gradient(180deg, rgba(182, 52, 52, 0.6), rgba(0,0,0,0.85));
+  color: #fff;
+}
+
+.hero .overlay {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero .watch {
+  margin-top: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #ff4c4c;
+  color: #fff;
+  border: none;
+}
