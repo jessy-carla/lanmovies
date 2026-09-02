@@ -1,100 +1,57 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+.app {
+	min-height: 100vh;
+	padding: 0 28px 48px;
+	background: radial-gradient(circle at 80% 0%, #26333c 0, #090b10 34rem);
 }
 
-body{
-background:#17d13f7e;
-color:white;
-font-family:sans-serif;
+.main-content {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 300px;
+	gap: 28px;
+	max-width: 1320px;
+	margin: 0 auto;
 }
 
-.app{
-padding:25px;
+.left section > h2 {
+	margin: 0 0 18px;
+	color: #f7f8fa;
+	font-size: 1.45rem;
 }
 
-.main-content{
-display:flex;
-gap:30px;
+.movies-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+	gap: 18px;
 }
 
-.left{
-flex:3;
+.right {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
 }
 
-.right{
-flex:1;
+@media (max-width: 900px) {
+	.main-content {
+		grid-template-columns: 1fr;
+	}
+
+	.right {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
 }
 
-.movies-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-}
-.hero{
-height:500px;
-border-radius:20px;
-background-image:url("https://image.tmdb.org/t/p/original/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg");
-background-size:cover;
-background-position:center;
-position:relative;
-margin-bottom:40px;
-}
+@media (max-width: 560px) {
+	.app {
+		padding: 0 14px 32px;
+	}
 
-.overlay{
-width:50%;
-height:100%;
-padding:60px;
-background:linear-gradient(
-90deg,
-rgba(160, 63, 63, 0.95),
-rgba(0,0,0,.2)
-);
-}
+	.movies-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 12px;
+	}
 
-.overlay h1{
-font-size:70px;
-margin:20px 0;
-}
-
-.watch{
-margin-top:30px;
-background:red;
-border:none;
-padding:15px 30px;
-border-radius:10px;
-color:white;
-font-size:18px;
-cursor:pointer;
-}
-.card{
-position:relative;
-overflow:hidden;
-border-radius:20px;
-background:#111827;
-}
-
-.card img{
-width:100%;
-height:320px;
-object-fit:cover;
-}
-
-.rate{
-position:absolute;
-top:10px;
-left:10px;
-background:#000;
-padding:6px 10px;
-border-radius:10px;
-}
-
-.content{
-padding:15px;
-}
-
-.content h3{
-font-size:18px;
-margin-bottom:10px;
+	.right {
+		display: flex;
+	}
 }

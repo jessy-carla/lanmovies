@@ -1,18 +1,16 @@
-import { createContext, useState } from "react";
-
-export const FavoritesContext = createContext();
+import { useState } from "react";
+import { FavoritesContext } from "./favorites-context";
 
 export function FavoritesProvider({ children }) {
-
   const [favorites, setFavorites] = useState([]);
 
   function addFavorite(movie) {
-    setFavorites([...favorites, movie]);
+    setFavorites((currentFavorites) => [...currentFavorites, movie]);
   }
 
   function removeFavorite(id) {
-    setFavorites(
-      favorites.filter(movie => movie.id !== id)
+    setFavorites((currentFavorites) =>
+      currentFavorites.filter((movie) => movie.id !== id)
     );
   }
 
@@ -21,7 +19,7 @@ export function FavoritesProvider({ children }) {
       value={{
         favorites,
         addFavorite,
-        removeFavorite
+        removeFavorite,
       }}
     >
       {children}
