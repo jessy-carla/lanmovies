@@ -1,5 +1,10 @@
 const TMDB_BASE_URL = "https://api.themoviedb.org/3";
-const TMDB_API_KEY = import.meta.env.VITE_TMDB_API_KEY || "6591636d50f34c97f274c5e1c3bc7f5b";
+const TMDB_API_KEY = import.meta.env.VITE_TMDB_API_KEY;
+
+// Validação da API Key
+if (!TMDB_API_KEY) {
+  console.error("Erro: VITE_TMDB_API_KEY não está configurada. Configure a variável de ambiente no .env.local");
+}
 
 let genresCache = null;
 
@@ -13,6 +18,7 @@ export async function getGenres() {
   );
 
   if (!response.ok) {
+    console.error("Erro ao buscar gêneros:", response.status);
     return {};
   }
 
